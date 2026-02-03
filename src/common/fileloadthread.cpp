@@ -53,7 +53,7 @@ void FileLoadThread::run()
         try {
             qDebug() << "Reading remaining file content";
             // reads all remaining data from the file.
-            indata += file.read(file.size());
+            indata += file.readAll();
             file.close();
             qDebug() << "Total bytes read:" << indata.size();
         } catch (const std::exception &e) {
